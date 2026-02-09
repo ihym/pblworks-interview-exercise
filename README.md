@@ -22,10 +22,10 @@ This route contains a form to edit a project. Again, it uses a server component 
 
 In order to run this app, you need to follow these steps
 
-1. `npm install` to install all your dependencies
+1. `pnpm install` to install all your dependencies
 2. Create a `.env` file at the root of the project and add this line: `DATABASE_URL="file:./dev.db"`
-3. `npx prisma migrate dev --schema src/prisma/schema.prisma` to install the prisma client and run any pending database migrations
-4. `npm run dev` to start the server
+3. `pnpm prisma migrate dev --schema src/prisma/schema.prisma` to install the prisma client and run any pending database migrations
+4. `pnpm dev` to start the server
 5. Visit `http://localhost:3000/projects` to get started
 
 ## Assignment
