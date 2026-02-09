@@ -1,15 +1,14 @@
 import { EditProjectForm } from '@/app/projects/[projectId]/components/EditProjectForm/EditProjectForm'
 import { prisma } from '@/prisma/prisma'
-import { Stack } from '@mui/material'
-import { Prisma } from '@prisma/client'
 import { notFound } from 'next/navigation'
 
-export default async function Page({
-  params,
-}: {
-  params: { projectId: string }
-}) {
-  const id = parseInt(params.projectId)
+type PageProps = {
+  params: Promise<{ projectId: string }>
+}
+
+export default async function Page({ params }: PageProps) {
+  const { projectId } = await params
+  const id = parseInt(projectId)
 
   const project = await prisma.project.findUnique({
     where: { id },

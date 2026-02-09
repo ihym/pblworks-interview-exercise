@@ -1,12 +1,9 @@
 'use client'
 
 import { updateProject } from '@/app/projects/[projectId]/actions/update-project'
-import { LoadingButton } from '@mui/lab'
 import {
-  FormControl,
+  Button,
   Grid,
-  Input,
-  InputLabel,
   Paper,
   Stack,
   TextField,
@@ -44,7 +41,7 @@ export const EditProjectForm = ({ project }: { project: Project }) => {
     <Paper sx={{ padding: 2 }}>
       <Typography variant="h2">{title || 'Untitled Project'}</Typography>
       <Grid container spacing={2} sx={{ mb: 2, mt: 2 }}>
-        <Grid item xs={12} md={5} lg={4}>
+        <Grid size={{ xs: 12, md: 5, lg: 4 }}>
           <TextField
             fullWidth
             label="Project Title"
@@ -53,7 +50,7 @@ export const EditProjectForm = ({ project }: { project: Project }) => {
             onChange={(event) => setTitle(event.target.value)}
           />
         </Grid>
-        <Grid item xs={12} md={7} lg={8}>
+        <Grid size={{ xs: 12, md: 7, lg: 8 }}>
           <TextField
             fullWidth
             label="Project Subhead"
@@ -62,7 +59,7 @@ export const EditProjectForm = ({ project }: { project: Project }) => {
             onChange={(event) => setSubhead(event.target.value)}
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid size={12}>
           <TextField
             fullWidth
             label="Project Descripton"
@@ -74,9 +71,9 @@ export const EditProjectForm = ({ project }: { project: Project }) => {
           />
         </Grid>
       </Grid>
-      <LoadingButton loading={isLoading} onClick={onSave} variant="contained">
+      <Button loading={isLoading} onClick={onSave} variant="contained">
         Update Project
-      </LoadingButton>
+      </Button>
     </Paper>
   )
 }

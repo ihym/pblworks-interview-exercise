@@ -2,11 +2,11 @@
 
 import { createEmptyProject } from '@/app/projects/actions/create-project'
 import { Add } from '@mui/icons-material'
-import { LoadingButton, LoadingButtonProps } from '@mui/lab'
+import { Button, ButtonProps } from '@mui/material'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
-export const CreateProjectButton = (props: LoadingButtonProps) => {
+export const CreateProjectButton = (props: ButtonProps) => {
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
 
@@ -23,7 +23,7 @@ export const CreateProjectButton = (props: LoadingButtonProps) => {
   }
 
   return (
-    <LoadingButton
+    <Button
       {...props}
       loading={isLoading}
       startIcon={<Add />}
@@ -31,6 +31,6 @@ export const CreateProjectButton = (props: LoadingButtonProps) => {
       onClick={onClick}
     >
       Create Project
-    </LoadingButton>
+    </Button>
   )
 }
