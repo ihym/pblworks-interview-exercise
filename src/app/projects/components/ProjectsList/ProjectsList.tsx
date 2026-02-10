@@ -1,5 +1,3 @@
-'use client'
-
 import {
   TableContainer,
   Paper,
@@ -10,7 +8,7 @@ import {
   TableBody,
   Link,
 } from '@mui/material'
-import NextLink from 'next/link'
+import { NextLink } from '@/app/components/NextLink'
 import { Project } from '@prisma/client'
 
 export const ProjectsList = ({ projects }: { projects: Project[] }) => {
