@@ -15,7 +15,7 @@ export const updateProject = async (project: Project) => {
   })
 
   revalidatePath('/projects')
-  revalidatePath(`/project/${project.id}`)
+  revalidatePath(`/projects/${project.id}`)
 
   return updatedProject
 }

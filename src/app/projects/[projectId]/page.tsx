@@ -1,5 +1,5 @@
-import { EditProjectForm } from '@/app/projects/[projectId]/components/EditProjectForm/EditProjectForm'
-import { prisma } from '@/prisma/prisma'
+import { EditProjectForm } from './components/EditProjectForm'
+import { getProject } from './queries/get-project'
 import { notFound } from 'next/navigation'
 
 type PageProps = {
@@ -8,11 +8,7 @@ type PageProps = {
 
 export default async function Page({ params }: PageProps) {
   const { projectId } = await params
-  const id = parseInt(projectId)
-
-  const project = await prisma.project.findUnique({
-    where: { id },
-  })
+  const project = await getProject(parseInt(projectId))
 
   if (!project) {
     return notFound()

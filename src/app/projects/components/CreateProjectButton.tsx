@@ -3,8 +3,8 @@
 import { createEmptyProject } from '@/app/projects/actions/create-project'
 import { Add } from '@mui/icons-material'
 import { Button, ButtonProps } from '@mui/material'
-import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 export const CreateProjectButton = (props: ButtonProps) => {
   const [isLoading, setIsLoading] = useState(false)

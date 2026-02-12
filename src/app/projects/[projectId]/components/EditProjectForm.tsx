@@ -1,14 +1,7 @@
 'use client'
 
-import { updateProject } from '@/app/projects/[projectId]/actions/update-project'
-import {
-  Button,
-  Grid,
-  Paper,
-  Stack,
-  TextField,
-  Typography,
-} from '@mui/material'
+import { updateProject } from '../actions/update-project'
+import { Button, Grid, Paper, TextField } from '@mui/material'
 import { Project } from '@prisma/client'
 import { useState } from 'react'
 
@@ -39,8 +32,7 @@ export const EditProjectForm = ({ project }: { project: Project }) => {
 
   return (
     <Paper sx={{ padding: 2 }}>
-      <Typography variant="h2">{title || 'Untitled Project'}</Typography>
-      <Grid container spacing={2} sx={{ mb: 2, mt: 2 }}>
+      <Grid container spacing={2} sx={{ mb: 2 }}>
         <Grid size={{ xs: 12, md: 5, lg: 4 }}>
           <TextField
             fullWidth
