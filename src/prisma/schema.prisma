@@ -11,8 +11,9 @@ datasource db {
 }
 
 model Project {
-  id          Int    @id @default(autoincrement())
-  title       String @default("")
-  subhead     String @default("")
-  description String @default("")
+  id          Int       @id @default(autoincrement())
+  title       String    @default("")
+  subhead     String    @default("")
+  description String    @default("")
+  lastUpdated DateTime  @default(now())
 }
