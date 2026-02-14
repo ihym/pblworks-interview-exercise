@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import { AppHeader } from './Header'
 
@@ -19,8 +18,10 @@ describe('Header', () => {
     expect(screen.getByText('My Awesome Project')).toBeInTheDocument()
   })
 
-  it('displays "Untitled Project" when the title is an empty string', () => {
-    render(<AppHeader title="" />)
-    expect(screen.getByText('Untitled Project')).toBeInTheDocument()
+  it('displays the avatar menu', () => {
+    render(<AppHeader />)
+    expect(
+      screen.getByRole('button', { name: /open user menu/i })
+    ).toBeInTheDocument()
   })
 })
